@@ -7,8 +7,8 @@ machine learning). Static HTML/CSS/JS — no build step, no dependencies.
 | File | Purpose |
 |------|---------|
 | `index.html` | The page |
-| `styles.css` | Design system (clinical-teal palette, dark/light themes) |
-| `script.js` | Theme toggle, active-section nav, scroll reveal, hero signal animation |
+| `styles.css` | Design system (Apple-inspired: `#f5f5f7` canvas, white cards, `#0071e3` action blue, dark/light themes) |
+| `script.js` | Theme toggle, active-section nav, scroll reveal |
 | `favicon.svg` | Site icon |
 | `cv.pdf` | Linked CV (replace with the latest version) |
 | `.nojekyll` | Tells GitHub Pages to skip Jekyll and serve files as-is |
@@ -31,14 +31,14 @@ machine learning). Static HTML/CSS/JS — no build step, no dependencies.
 - **Contact / links** — email, Google Scholar, and LinkedIn are in the hero and `#contact`
   blocks of `index.html`. Update if any change.
 - **CV** — replace `cv.pdf`; the filename is referenced in `index.html`.
-- **Accent color** — change `--accent` / `--accent-bright` in `styles.css` (`:root` plus both
+- **Accent color** — change `--primary` / `--link` in `styles.css` (`:root` plus both
   theme overrides).
 - **Add a photo** — drop an image in the folder and reference it from the hero if desired.
 - **Google Scholar ID** — currently `7rXrAecAAAAJ`; edit if needed.
 
 ## Notes
-- Fonts (Newsreader, IBM Plex Sans, IBM Plex Mono) load from Google Fonts — this works on
-  GitHub Pages but requires an internet connection when viewing.
-- The hero animation and scroll reveals respect `prefers-reduced-motion`.
+- Typography uses the SF Pro system stack on Apple devices; Inter loads from Google Fonts as
+  the cross-platform fallback.
+- Scroll reveals respect `prefers-reduced-motion`.
 - Themes follow the OS setting by default; the toggle in the nav overrides and remembers the
   choice.
