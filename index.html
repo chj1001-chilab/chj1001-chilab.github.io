@@ -88,38 +88,32 @@
       <div class="about__grid">
         <div class="about__body prose reveal">
           <p>
-            I am a researcher in the Department of Information Medicine at <strong>Asan Medical
-            Center</strong>, Seoul, working at the intersection of treatment-response prediction and
-            rigorous clinical-reality validation. Over five years in a hospital research lab I have
-            led three first-author studies, and my through-line has been moving prediction away from
-            static patient <em>states</em> and toward the <em>responses a treatment will produce</em>.
+            Researcher in the Department of Information Medicine at <strong>Asan Medical
+            Center</strong>, Seoul. Five years of hospital-based clinical ML; three first-author
+            studies moving prediction from static patient <em>states</em> to the
+            <em>responses a treatment produces</em>.
           </p>
           <p>
-            That trajectory runs from tabular machine learning for dose decision support, through
-            time-series deep learning of treatment response, to a controlled appraisal of large
-            language models on electronic health records — held together by one conviction:
-            <em>a prediction only has value once it can be safely turned into an intervention.</em>
-            I do not trust a model until it has been tested against clinical reality, so I judge my
-            own work by external validation, calibration, and net clinical benefit rather than
-            leaderboard accuracy alone.
+            One conviction holds the work together: <em>a prediction only has value once it can be
+            safely turned into an intervention.</em> I judge models by external validation,
+            calibration, and net clinical benefit — not leaderboard accuracy.
           </p>
           <p>
-            For my PhD I want to build safe, validated, action-oriented decision support that
-            forecasts how patients respond to treatment and, critically, knows when to hand the
-            decision back to a clinician. My concrete anchor is reviving a held project on
-            personalized <strong>sepsis-bundle recommendation</strong> as goal-conditioned /
-            offline reinforcement learning, grounded in causal estimation of intervention effects.
+            PhD goal: decision support that forecasts treatment response and knows when to defer
+            to the clinician — anchored in reviving a personalized <strong>sepsis-bundle
+            recommendation</strong> project as offline reinforcement learning with causal
+            estimation of intervention effects.
           </p>
         </div>
         <aside class="focus reveal">
           <p class="eyebrow focus__label">Current focus</p>
           <ul class="tags">
-            <li>Prediction-to-intervention modeling for actionable decision support</li>
-            <li>Treatment-response &amp; trajectory-under-intervention modeling from EHR</li>
-            <li>Goal-conditioned &amp; offline RL for treatment recommendation</li>
-            <li>Selective prediction / learning-to-defer, with calibration as a safety signal</li>
-            <li>Clinical-utility-grounded evaluation (decision curve analysis, external validation)</li>
-            <li>Cross-site generalization &amp; privacy-preserving on-premise adaptation</li>
+            <li>Prediction-to-intervention modeling</li>
+            <li>Treatment-response forecasting from EHR</li>
+            <li>Offline &amp; goal-conditioned RL for treatment recommendation</li>
+            <li>Selective prediction / learning-to-defer</li>
+            <li>Clinical-utility evaluation: DCA, external validation</li>
+            <li>Cross-site generalization &amp; on-premise adaptation</li>
           </ul>
         </aside>
       </div>
@@ -132,9 +126,8 @@
         <h2>Research trajectory</h2>
       </div>
       <p class="traj__intro reveal">
-        Three first-author studies, read as one arc — from predicting a patient's <em>state</em>, to
-        forecasting their <em>response</em> to a treatment, to asking whether foundation models can
-        earn the same clinical trust.
+        Three first-author studies, one arc: from a patient's <em>state</em>, to the
+        <em>response</em> to treatment, to whether foundation models earn the same clinical trust.
       </p>
 
       <div class="traj">
@@ -153,11 +146,9 @@
             <h3>Machine learning for warfarin discharge dosing</h3>
             <p class="node__lede">Tabular ML · decision support for the initial dose</p>
             <p class="desc">
-              Warfarin has a narrow therapeutic window and pharmacogenetic testing is slow and costly,
-              so clinicians must set an initial dose from limited early data. I trained models on
-              <strong>17 routine EMR features</strong> collected within two days of admission — no genetic
-              data — to suggest a personalized dose, interpreted them with SHAP, and benchmarked the
-              predictions against five physicians and against prior pharmacogenetic algorithms.
+              Personalized initial dosing from <strong>17 routine EMR features</strong> within two
+              days of admission — no genetic data. Interpreted with SHAP; benchmarked against five
+              physicians and prior pharmacogenetic algorithms.
             </p>
             <ul class="metrics">
               <li>MAE <b>0.9&nbsp;mg</b> vs 1.3&nbsp;mg (physicians)</li>
@@ -166,8 +157,8 @@
               <li>XGBoost · ANN · RF · LR</li>
             </ul>
             <p class="node__insight">
-              Validating against clinical judgment — not just a held-out test set — is what turns a
-              regression model into a decision-support claim.
+              Validation against clinical judgment — not just a test set — turns a model into
+              decision support.
             </p>
             <div class="node__links">
               <a href="https://www.nature.com/articles/s41598-023-49831-6" target="_blank" rel="noopener">Paper ↗</a>
@@ -190,12 +181,10 @@
             <h3>Forecasting weight change for diuretic titration</h3>
             <p class="node__lede">Time-series deep learning · treatment-response forecasting</p>
             <p class="desc">
-              Loop-diuretic dosing in heart failure lacks robust guidelines, so I built
-              <strong>TSFD-LSTM</strong> — a bidirectional LSTM seq2seq model with a dot-product
-              attention mechanism — to forecast a patient's 48-hour weight change after intravenous
-              diuretic injection from <strong>65-variable</strong> multivariate EHR sequences. An
-              attention ablation and a Transformer baseline sharpened the comparison, and attention
-              heatmaps exposed which features and time steps drove each forecast.
+              <strong>TSFD-LSTM</strong> — a bidirectional seq2seq LSTM with attention — forecasts
+              48-hour weight change after IV diuretic injection from <strong>65-variable</strong>
+              EHR sequences. Attention ablation, Transformer baseline, and attention heatmaps for
+              interpretability.
             </p>
             <ul class="metrics">
               <li>Accuracy within 1&nbsp;kg <b>85.3%</b></li>
@@ -204,8 +193,8 @@
               <li>4,720 patients · 182,386 rows</li>
             </ul>
             <p class="node__insight">
-              This was the pivot: predicting the trajectory an intervention <em>produces</em> is a
-              fundamentally different — and more useful — problem than classifying a patient's state.
+              The pivot: predicting what an intervention <em>produces</em>, not what state a
+              patient is in.
             </p>
             <div class="node__links">
               <a href="https://www.nature.com/articles/s41598-024-68663-6" target="_blank" rel="noopener">Paper ↗</a>
@@ -228,13 +217,10 @@
             <h3>Large language models vs. traditional ML for tabular clinical prediction</h3>
             <p class="node__lede">LLM foundation models · does capability replace hand-crafted pipelines?</p>
             <p class="desc">
-              Tree-based ML dominates tabular clinical prediction but depends on task-specific
-              preprocessing that loses information. I fine-tuned open-weight LLMs
-              (<strong>Qwen2.5 3–14B, Llama3.1-8B</strong>) with <strong>LoRA/PEFT</strong> on a single
-              GPU — under a strict "data never leaves the hospital" constraint — feeding EHR records
-              <em>serialized verbatim</em> as key–value text, then ran a same-data, same-split
-              comparison against XGBoost and CatBoost across three tasks, judged by discrimination,
-              calibration, and decision curve analysis.
+              Open-weight LLMs (<strong>Qwen2.5 3–14B, Llama3.1-8B</strong>) fine-tuned with
+              <strong>LoRA/PEFT</strong> on a single GPU — data never leaves the hospital — on EHR
+              records <em>serialized verbatim</em>, versus XGBoost/CatBoost on identical splits
+              across three tasks.
             </p>
             <ul class="metrics">
               <li>MACE AUROC <b>0.81</b> ≈ XGBoost 0.80</li>
@@ -243,9 +229,8 @@
               <li>3 tasks · verbatim serialization</li>
             </ul>
             <p class="node__insight">
-              Capability converges, but trust does not: the same clinical yardstick I apply to any
-              model must apply to the hyped ones too. LLMs are a chapter of this story — not the
-              destination.
+              Capability converges; trust does not. LLMs face the same clinical yardstick — a
+              chapter, not the destination.
             </p>
             <div class="node__links">
               <span class="ref">Preprint available on request</span>
@@ -490,7 +475,7 @@
         <div class="reveal">
           <p class="eyebrow" style="margin-bottom:.9rem;">Get in touch</p>
           <h2>Open to PhD opportunities, Fall 2027</h2>
-          <p>I'm looking for a doctoral home where clinical decision support is held to the standard of a real intervention. Happy to share preprints, code, or details of any project.</p>
+          <p>Looking for a doctoral home where decision support is held to the standard of a real intervention. Preprints, code, and project details available on request.</p>
         </div>
         <div class="reveal">
           <a class="mail" href="mailto:chj1001@amc.seoul.kr">chj1001@amc.seoul.kr</a>
