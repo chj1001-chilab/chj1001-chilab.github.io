@@ -185,7 +185,8 @@ h3.sub {
 .pubs .t a:hover { color: var(--link); }
 .pubs .au { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
 .pubs .au b { color: var(--fg); font-weight: 600; }
-.news li { grid-template-columns: 84px 1fr; }
+.news li { grid-template-columns: 88px 1fr; }
+.news .yr { white-space: nowrap; }
 details.more { margin-top: 4px; }
 details.more summary {
   cursor: pointer; color: var(--link); font-size: 14px; padding: 10px 0; list-style: none;
